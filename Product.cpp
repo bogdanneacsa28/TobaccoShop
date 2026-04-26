@@ -27,16 +27,18 @@ Product &Product::operator=(const Product &p) {
     return *this;
 }
 Product::~Product() {}
+void Product::currentInput(std::istream &is) {
+    cout << "Product name: ";
+    getline(is, name);
+    cout << "Price: ";
+    is >> price;
+    cout << "Initial stock: ";
+    is >> stock;
+    is.ignore();
+}
 
 istream &operator>>(istream &is, Product &p) {
-    cout << "Name of the product: ";
-    getline(is, p.name);
-    cout << "Price of the product: ";
-    is >> p.price;
-    is.ignore();
-    cout << "Current stock of product: ";
-    is >> p.stock;
-    is.ignore();
+    p.currentInput(is);
     return is;
 }
 ostream &operator<<(ostream &os, const Product &p) {

@@ -7,4 +7,6 @@ add_executable(project_2___TobaccoShop main.cpp
         Product.h
         Product.cpp
         Vape.h
-        Vape.cpp)
+        Vape.cpp
+        Cigarettes.h
+        Cigarettes.cpp)

@@ -14,6 +14,7 @@ public:
     ~Vape();
     std::string getType() const override {return "Vape";}
     void currentOutput(std::ostream& os) const override;
+    void currentInput(std::istream& is) override;
     void serialize(std::ostream &os) const override;
     void deserialize(std::istream &is) override;
 };

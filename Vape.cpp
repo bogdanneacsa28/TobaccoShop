@@ -28,11 +28,11 @@ void Vape::currentOutput(std::ostream &os) const {
     os << "[VAPE] " << getName()
         << " | Price: " << getPrice() << " RON"
         << " | Stock: " << getStock() << '\n';
-    os << "-> Flavour : " << flavor << '\n';
-    os << "-> Puffs : " << puffs << '\n';
+    os << "        -> Flavour : " << flavor << " | Puffs : " << puffs << '\n';
 }
 
 void Vape::serialize(std::ostream &os) const {
+    os << getType() << '\n';
     Product :: serialize(os);
     os << puffs<<'\n';
     os << flavor<<'\n';
@@ -42,4 +42,12 @@ void Vape::deserialize(std::istream &is) {
     is >>puffs;
     is.ignore();
     getline(is,flavor);
+}
+void Vape::currentInput(std::istream &is) {
+    Product :: currentInput(is);
+    cout<< "Flavor : ";
+    getline(is,flavor);
+    cout<< "Puffs : ";
+    is >> puffs;
+    is.ignore();
 }
