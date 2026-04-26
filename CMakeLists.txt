@@ -5,4 +5,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 add_executable(project_2___TobaccoShop main.cpp
         Product.h
-        Product.cpp)
+        Product.cpp
+        Vape.h
+        Vape.cpp)
