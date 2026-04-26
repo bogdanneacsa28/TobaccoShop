@@ -3,15 +3,4 @@ project(project_2___TobaccoShop)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(project_2___TobaccoShop main.cpp
-        Product.h
-        Product.cpp
-        Vape.h
-        Vape.cpp
-        Cigarettes.h
-        Cigarettes.cpp
-        Snus.h
-        Snus.cpp
-        Customer.h
-        Customer.cpp
-        Exceptions.h)
+add_executable(TobaccoShop main.cpp Product.cpp Vape.cpp Cigarettes.cpp Snus.cpp Customer.cpp Shop.cpp)

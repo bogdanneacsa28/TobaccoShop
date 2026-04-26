@@ -28,7 +28,7 @@ Snus::~Snus(){}
 void Snus::currentInput(std::istream &is) {
     Product::currentInput(is);
     cout << "Flavor: ";
-    is >> flavor;
+    getline(is,flavor);
     cout << "Nicotine (mg): ";
     is >> nicotineMg;
     is.ignore();
@@ -42,10 +42,11 @@ void Snus::serialize(std::ostream &os) const {
 }
 void Snus::deserialize(std::istream &is) {
     Product ::deserialize(is);
-    is >> flavor >> nicotineMg;
+    getline(is,flavor);
+    is >> nicotineMg;
     is.ignore();
 }
 void Snus::currentOutput(std::ostream &os) const {
     os << "[SNUS] " << getName() << " | Price: " << getPrice() << " RON | Stock: " << getStock() << '\n'
-       << "        -> Flavor: " << flavor << "mg | Nicotine: " << nicotineMg << "mg\n";
+       << "        -> Flavor: " << flavor << " | Nicotine: " << nicotineMg << "mg\n";
 }
