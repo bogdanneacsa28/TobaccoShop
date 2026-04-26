@@ -11,4 +11,7 @@ add_executable(project_2___TobaccoShop main.cpp
         Cigarettes.h
         Cigarettes.cpp
         Snus.h
-        Snus.cpp)
+        Snus.cpp
+        Customer.h
+        Customer.cpp
+        Exceptions.h)
